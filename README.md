@@ -1,5 +1,11 @@
 # umu-protonfixes
 
+> [!NOTE]
+> This fork supplies the `umu-wow` compatibility profile used by
+> [ErgenProton-WoW](https://github.com/ErgenosSW/ErgenProton-WoW). The profile
+> sets `WINE_SIMULATE_WRITECOPY=1` for Battle.net and World of Warcraft. All
+> other fixes are inherited from the upstream umu-protonfixes project.
+
 This project acts as a stopgap for fixing games that don't work out of the box on Proton. It implements game-specific patches, such as installing Winetricks verbs.
 
 It is the heart of `UMU-Proton` and `GE-Proton`.
