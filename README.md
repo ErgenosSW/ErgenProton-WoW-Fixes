@@ -1,5 +1,7 @@
 # umu-protonfixes
 
+[![CI](https://github.com/ErgenosSW/ErgenProton-WoW-Fixes/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ErgenosSW/ErgenProton-WoW-Fixes/actions/workflows/ci.yml)
+
 This project acts as a stopgap for fixing games that don't work out of the box on Proton. It implements game-specific patches, such as installing Winetricks verbs.
 
 It is the heart of `UMU-Proton` and `GE-Proton`.
