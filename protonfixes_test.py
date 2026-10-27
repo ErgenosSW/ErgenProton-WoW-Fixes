@@ -20,7 +20,9 @@ class TestProtonfixes(unittest.TestCase):
         }
         self.game_id = '1293820'
         self.pfx = Path(tempfile.mkdtemp())
-        self.db = Path(tempfile.mktemp())
+        db_fd, db_path = tempfile.mkstemp()
+        os.close(db_fd)
+        self.db = Path(db_path)
         self.db_data = (
             "TITLE,STORE,CODENAME,UMU_ID,COMMON ACRONYM (Optional),NOTE (Optional)\n"
             "Age of Wonders,gog,1207658883,umu-61500,aow,\n"

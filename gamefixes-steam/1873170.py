@@ -5,7 +5,6 @@ Updated from 0.85 that didn't display custom cursors.
 """
 
 import os
-import glob
 import shutil
 import urllib.request
 import zipfile
@@ -17,7 +16,7 @@ from protonfixes.logger import log
 
 def main() -> None:
     util.replace_command('CTB.exe', 'nw.exe')
-    install_dir = glob.escape(util.get_game_install_path())
+    install_dir = util.get_game_install_path()
     if not os.path.isfile(os.path.join(install_dir, 'nw.exe')):
         url = 'https://dl.nwjs.io/v0.86.0/nwjs-v0.86.0-win-x64.zip'
         hashsum = 'ed2681847162e0fa457dd55e293b6f331ccd58acedd934a98e7fe1406c26dd4f'
@@ -33,7 +32,9 @@ def main() -> None:
             shutil.rmtree(nwjs)
         else:
             log(f"{nwjs} checksum doesn't match, fix not applied.")
-    subprocess.call(
-        [f'sed -i \'s/"frame": true/"frame": false/\' "{install_dir}/package.json"'],
-        shell=True,
-    )
+    subprocess.call([
+        'sed',
+        '-i',
+        's/"frame": true/"frame": false/',
+        os.path.join(install_dir, 'package.json'),
+    ])
